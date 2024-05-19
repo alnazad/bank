@@ -6,7 +6,14 @@ const router = createRouter({
     {
       path: '/',
       name: 'front',
-      component: () => import('../front_panel/views/Front.vue')
+      component: () => import('../front_panel/views/Front.vue'),
+      children:[
+        {
+          path: 'header',
+      name: 'header',
+      component: () => import('../front_panel/components/Header.vue'),
+        }
+      ]
     },
     {
       path: '/admin',
